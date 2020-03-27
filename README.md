@@ -53,5 +53,11 @@ Explain in detail your own proposed approach and what novelty or improvement you
 -2 for unclear explanation
 For development projects, clearly describe what will be done by the final report and how exactly this will be achieved. Example, if you are creating an app, where do you plan to host it.
 
-## Contribution [-5 points if missing]
-Distribution of team member effort. Can be as simple as "all team members have contributed a similar amount of effort" or this can be a more detailed description of effort breakdown. If effort distribution is too uneven, I may assign higher scores to members who have contributed more.
+## Contribution
+Data collection: Nazanin  
+Data Preparation: Nazanin  
+Raw Data Statistic:  
+Data Analysis:  
+First Baseline Implemetation and discussion: Nazanin  
+Second Baseline:  
+Next Steps:  
