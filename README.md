@@ -1,0 +1,2 @@
+# NewsSentimentAnalysis_StockPredictions
+TextMining,NLP,SentimentAnalysis
