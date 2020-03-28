@@ -3,8 +3,28 @@ TextMining,NLP,SentimentAnalysis
 
 
 ## Abstract
-Add an updated abstract from the proposal version. In addition to a brief summary of the project, add a summary of the dataset description and analysis, and baseline results.
-Should not be more than 1 column.
+In the finance field, stock market and its trends are extremely volatile in nature. It attracts
+researchers to capture the volatility and predicting its next moves. 
+This project is about taking non quantifiable data
+such as financial news articles about a company and predicting its future stock trend with news sentiment
+classification. Assuming that news articles have impact on stock market, this is an attempt to study
+relationship between news and stock trend.
+Result of phase 1 is news
+articles with its polarity score. This result is given as an input to the phase 2. In phase 2, text is
+converted in tf-idf vector space so that it can be given to the classifier. Then three different
+classifiers are programmed for the same data to compare results
+
+For integrity throughout the project, we considered
+Adjusted Close price as everyday stock price
+
+Stock market forecasting is very important in the
+planning of business activities.
+ In this paper, we retrieved, extracted, and
+analyzed the effects of news sentiments on the stock market. 
+
+with their corresponding sentiment scores. These scores will
+then be analyzed and cross-validated against the stock prices
+to understand their effect.
 
 ## Dataset description [35 Points]
  ### Data preparation: [10 Points]
@@ -35,6 +55,14 @@ Please make sure to add only relevant visualizations and insights. Inserting vag
 ## Describe the Experimental Settings [10 Points]
 Explain the parameters of the experiment: what is the split used, cross-validation setting, evaluation metrics (for example, accuracy, AUC, or precision etc.), system settings (RAM, GPU, or CPU statistics).
 -2 per missing relevant detail.
+
+In order to measure accuracy, we developed a novel validation technique called the k-fold sequential cross validation
+(k-SCV). In this method, we train on all days upto a specific day and test for the next k days. The direct k-fold
+cross validation method is not applicable in this context as
+the stock data is actually a time series unlike other scenarios
+where the data is available as a set. Therefore, it is meaningless to analyze past stock data after training on future
+values. For the purpose of our analysis, we use k = 5.
+
 
 ## Baseline results and discussions [30 points]
 The report should have results from at least 2 baselines. At least one baseline should be from a published paper or preprint. Creating one reasonable baseline yourself (e.g., using feature engineering and standard ML classifier) is allowed. No additional points will be awarded for having more than 2 baselines.
