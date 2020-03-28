@@ -26,6 +26,8 @@ with their corresponding sentiment scores. These scores will
 then be analyzed and cross-validated against the stock prices
 to understand their effect.
 
+Identification of trends in the stock prices of a company by performing fundamental analysis of the company. News articles were provided as training data-sets to the model which classified the articles as positive or neutral. Sentiment score was computed by calculating the difference between positive and negative words present in the news article. Comparisons were made between the actual stock prices and the sentiment scores. Naive Bayes, OneR and Random Forest algorithms were used to observe the results of the model using Weka
+
 ## Dataset description [35 Points]
  ### Data preparation: [10 Points]
   #### Source [2 points]
@@ -63,7 +65,9 @@ the stock data is actually a time series unlike other scenarios
 where the data is available as a set. Therefore, it is meaningless to analyze past stock data after training on future
 values. For the purpose of our analysis, we use k = 5.
 
-
+Logistic Regression perform badly on
+this dataset, giving the same percentage values for Direction
+Accuracy for all mood combinations. This shows that classification (directly predicting trends) is not the ideal methodology for this problem.
 ## Baseline results and discussions [30 points]
 The report should have results from at least 2 baselines. At least one baseline should be from a published paper or preprint. Creating one reasonable baseline yourself (e.g., using feature engineering and standard ML classifier) is allowed. No additional points will be awarded for having more than 2 baselines.
 Baseline description [7.5*2 = 15]
@@ -75,7 +79,15 @@ Results of the baseline on your dataset, presented in a table or figure (e.g., a
 The baselines should be compared on the same metric [-5 if not]
 Result discussion [5 points]
 Compare the results of both the baselines. Why does one perform better than the other? If applicable, compare the result to the state-of-the-art reported in literature.
-
+We have investigated the causative relation between public
+mood as measured from a large scale collection of tweets
+from twitter.com and the DJIA values. 
+Thirdly, a Self Organizing Fuzzy Neural
+Network performs very good in predicting the actual DJIA
+values when trained on the feature set consisting of the DJIA
+values, Calm mood values and Happiness dimension over the
+past 3 days. The performance measure we have used is kfold sequential cross validation, which is more indicative of
+the market movements for financial data
 ## Next steps [5 Points]
 Explain in detail your own proposed approach and what novelty or improvement you are adding over the baselines. [2.5 + 2.5 = 5 Points]
 -2 for unclear explanation
