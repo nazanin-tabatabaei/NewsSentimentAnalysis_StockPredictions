@@ -60,8 +60,8 @@ As an exploration to this baseline, we updated the VADER lexicon with words+sent
 
   #### Baseline result [10 points]
   Below are the results after applying various classifiers, The ones on the left are for basic VADER sentiment analyzer, and the ones on the right are for the analyzer with modified lexicon.
-  <img src="https://www.dropbox.com/s/50njtc27nlfqbyh/01logistic.PNG?raw=1">
-  <img src="https://www.dropbox.com/s/93uljlhsr8o2l8o/02logistic.PNG?raw=1">  
+  <img src="https://www.dropbox.com/s/a8exwr39kx8n6gy/P1Logistic.PNG?raw=1">
+  <img src="https://www.dropbox.com/s/f22hhnpuqxfsih4/P2Logistic.PNG?raw=1">  
   
   <img src="https://www.dropbox.com/s/1lf8wfcdp8o4e0l/01randomForest.PNG?raw=1">
   <img src="https://www.dropbox.com/s/kr39qyp3ezx6y54/02randomForest.PNG?raw=1">  
