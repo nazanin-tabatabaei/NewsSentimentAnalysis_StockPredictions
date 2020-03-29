@@ -5,7 +5,7 @@ TextMining,NLP,SentimentAnalysis
 ## Abstract
 In the finance field, Stock market forecasting is very important in the planning of business activities. Stock market attracts researchers to capture the volatility and predicting its next moves. There are many techniques to predict the stock price variations, but this project is focused on using non-quantifiable data such as New York Times’ news articles headlines and predicting future stock changes depending on the news sentiment, assuming that news articles have impact on stock market.
 We are using NY Times Archive API to gather the news website articles data over the span of 20 years. Sentiment analysis of the news headlines is then used for training various MachineLearning models to understand their effect and predict the price of Dow Jones Industrial Average (DJIA) stock indices, collected from Yahoo finance website. We have used DJIA stock indices to predict the overall change in US top companies' stock market, instead of predicting individual company’s stock prices. For integrity throughout the project, we considered Adjusted Close price as everyday stock price.
-
+To analyze the sentiment of the news headlines, we used 2 techniques. In the first technique, we used VADER sentiment Analyzer from NLTK package, which is trained using social media and news data. In the second approach, we trained our own.....The evaluation results of these 2 techniques show that the ... method works better.
 ## Dataset description  
  ### Data preparation:  
   #### Source  
@@ -39,10 +39,11 @@ Please make sure to add only relevant visualizations and insights. Inserting vag
 
 ## Describe the Experimental Settings [10 Points]
  ### Evaluation metrics 
-In order to measure performance in the first baseline, we used a validation technique called the k-fold sequential cross validation (k-SCV). Since stock market data is of the form of time series, other methods such as ordinary k-fold crossvalidation are not applicable.
-In this method, we train on all days upto a specific day and test for the next days. For the purpose of our analysis, we use k = 5. More specifically, we trained our model on data from January first to October 31st of every year and tested it for the remaining of the same year. Technique from-> http://cs229.stanford.edu/proj2011/GoelMittal-StockMarketPredictionUsingTwitterSentimentAnalysis.pdf  
+ In order to measure performance in the first baseline, we used a validation technique called the k-fold sequential cross validation (k-SCV). Since stock market data is of the form of time series, other methods such as ordinary k-fold crossvalidation are not applicable.
+In this method, we train on all days upto a specific day and test for the next days. For the purpose of our analysis, we use k = 3, 6, and 12. For example for a 6-SCV, we trained our model on data from January first to October 31st of every year and tested it for the remaining of the same year. Technique from-> http://cs229.stanford.edu/proj2011/GoelMittal-StockMarketPredictionUsingTwitterSentimentAnalysis.pdf  
 
-accuracy,AUC
+The evaluation metrics used for comparing the performance of our models include RMSE, MAE, and R2.
+Our own Repository for this project resides at: https://github.com/nazanin-tabatabaei/NewsSentimentAnalysis_StockPredictions
 
  ### System settings:
 Comodity computer with RAM:16GB, GPU:Intel UHD Graphics 630, CPU:Intel Core i7-8750H CPU @ 2.20GHz
@@ -58,6 +59,12 @@ As the prices of the stocks fluctuate a lot, we have used a technique called smo
 As an exploration to this baseline, we updated the VADER lexicon with words+sentiments from other sources/lexicons such as the Loughran-McDonald Financial Sentiment Word Lists, and ran the various models mentioned above on the new lexicon and compared the results.  
 
   #### Baseline result [10 points]
+  Below are the results after applying various classifiers, The ones on the left are for basic VADER sentiment analyzer, and the ones on the right are for the analyzer with modified lexicon.
+  <img src="https://www.dropbox.com/s/50njtc27nlfqbyh/01logistic.PNG?raw=1">
+  <img src="https://www.dropbox.com/s/93uljlhsr8o2l8o/02logistic.PNG?raw=1">  
+  
+  <img src="https://www.dropbox.com/s/1lf8wfcdp8o4e0l/01randomForest.PNG?raw=1">
+  <img src="https://www.dropbox.com/s/kr39qyp3ezx6y54/02randomForest.PNG?raw=1">  
   Logistic Regression perform badly on this dataset. This shows that classification (directly predicting trends) is probabaly not the ideal methodology for this problem. Our tests also determined that using the MLP classifier (a.k.a. neural networks) showed better results than logistic regression and random forest trained models.
  
  ### Second BaseLine
@@ -77,10 +84,13 @@ For the first baseline, We will be experimenting with Convolutional Neural Netwo
 VADER sentiment Analyzer was used for the first baseline, which is built for social media text. As an exploratory addition to the first baseline, we updated the VADER lexicon with words+sentiments from other sources/lexicons such as the Loughran-McDonald Financial Sentiment Word Lists. A next step could be developing a sentiment analyzer which could work better in news article situations.  
 In our project we only considered news article sentiment analysis for prediction but in the real scenarios, stock fluctuations show trends which get repeated over a period of time. So there’s a lot of scope in merging the stock trends with the sentiment analysis to predict the stocks which could probably give better results.  
 ## Contribution
+Abstract:Nazanin
 Data collection: Nazanin  
 Data Preparation: Nazanin  
 Raw Data Statistic:  
 Data Analysis:  
+Evaluation methods: Nazanin  
 First Baseline Implemetation, discussion and next steps: Nazanin  
 Second Baseline:  
 Writing the Midterm Report: All  
+Transfering to ACM format:  
