@@ -64,21 +64,27 @@ As an exploration to this baseline, we updated the VADER lexicon with words+sent
   
    ##### Logistic Regression:  
   <img src="https://www.dropbox.com/s/rzx47373a5xbp1e/Q1Logistic.PNG?raw=1"> <img src="https://www.dropbox.com/s/09a7kfye9khj3t8/Q2Logistic.PNG?raw=1">  
-    VADER sentiment analyzer &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;; &nbsp; &nbsp; VADER sentiment analyzer with modified Lexicon  
+    VADER sentiment analyzer &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VADER sentiment analyzer with modified Lexicon  
     
     
    ##### Random Forest Regressor:  
   <img src="https://www.dropbox.com/s/if6tg81riem55z1/Q1forest.PNG?raw=1"> <img src="https://www.dropbox.com/s/oxhovy5dy9tjrj1/Q2forest.PNG?raw=1">  
-    VADER sentiment analyzer &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;; &nbsp; &nbsp; VADER sentiment analyzer with modified Lexicon 
+    VADER sentiment analyzer &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VADER sentiment analyzer with modified Lexicon 
     
     
    ##### Multi Layer Perceptron:  
    hidden_layer_sizes=(100, 200, 100), activation='tanh', solver='lbfgs', alpha=0.010, learning_rate_init = 0.001  
    <img src="https://www.dropbox.com/s/1t660vqxmjwfd0n/Q1MLP1.PNG?raw=1"> <img src="https://www.dropbox.com/s/3poahkwcjiilwbh/Q2MLP1.PNG?raw=1">  
-    VADER sentiment analyzer &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;; &nbsp; &nbsp; VADER sentiment analyzer with modified Lexicon  
+    VADER sentiment analyzer &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VADER sentiment analyzer with modified Lexicon  
     hidden_layer_sizes=(100, 200, 100), activation='relu', solver='lbfgs', alpha=0.010, learning_rate_init = 0.001  
    <img src="https://www.dropbox.com/s/boc5xm772ic7ngo/Q1MLP2.PNG?raw=1"> <img src="https://www.dropbox.com/s/nha4oz5sqoq60wh/Q2MLP2.PNG?raw=1">  
-    VADER sentiment analyzer &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;; &nbsp; &nbsp; VADER sentiment analyzer with modified Lexicon  
+    VADER sentiment analyzer &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VADER sentiment analyzer with modified Lexicon  
+    hidden_layer_sizes=(100, 200, 100), activation='relu', solver='lbfgs', alpha=0.005, learning_rate_init = 0.001  
+   <img src="https://www.dropbox.com/s/lwuthpc63wk3af7/Q1MLP3.PNG?raw=1"> <img src="https://www.dropbox.com/s/eog0qdbc6w75r6p/Q2MLP3.PNG?raw=1">  
+    VADER sentiment analyzer &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VADER sentiment analyzer with modified Lexicon  
+    hidden_layer_sizes=(100, 200, 50), activation='relu', solver='lbfgs', alpha=0.005, learning_rate_init = 0.001  
+   <img src="https://www.dropbox.com/s/pd0se8r1p1inks1/Q1MLP4.PNG?raw=1"> <img src="https://www.dropbox.com/s/q81moef0tjdornn/Q2MLP4.PNG?raw=1">  
+    VADER sentiment analyzer &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VADER sentiment analyzer with modified Lexicon  
     
     
   Logistic Regression perform badly on this dataset. This shows that classification (directly predicting trends) is probabaly not the ideal methodology for this problem. Our tests also determined that using the MLP classifier (a.k.a. neural networks) showed better results than logistic regression and random forest trained models.
