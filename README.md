@@ -58,20 +58,26 @@ Output of sentiment analysis is then fed to machine learning models from scikit-
 As the prices of the stocks fluctuate a lot, we have used a technique called smoothing which is used in financial markets to take a moving average of the values, which results in comparatively smooth curves. For moving average implementation, we have used the EWMA method from pandas package.  
 As an exploration to this baseline, we updated the VADER lexicon with words+sentiments from other sources/lexicons such as the Loughran-McDonald Financial Sentiment Word Lists, and ran the various models mentioned above on the new lexicon and compared the results.  
 
-  #### Baseline result [10 points]
-  Below are the results after applying various classifiers:
+  #### Baseline result
+  Below are the results after applying various classifiers: 
+  
+  
    ##### Logistic Regression:  
   <img src="https://www.dropbox.com/s/a8exwr39kx8n6gy/P1Logistic.PNG?raw=1">  
     VADER sentiment analyzer  
     
   <img src="https://www.dropbox.com/s/3q66x5gqqyyl9g6/P2Logistic2.PNG?raw=1">  
     VADER sentiment analyzer with modified Lexicon  
+    
+    
    ##### Random Forest Regressor:  
   <img src="https://www.dropbox.com/s/qwz5efdzus86coc/P1random.PNG?raw=1">  
     VADER sentiment analyzer  
     
   <img src="https://www.dropbox.com/s/grszklmvngj69ak/P2random.PNG?raw=1">  
     VADER sentiment analyzer with modified Lexicon  
+    
+    
    ##### Multi Layer Perceptron:
    
   Logistic Regression perform badly on this dataset. This shows that classification (directly predicting trends) is probabaly not the ideal methodology for this problem. Our tests also determined that using the MLP classifier (a.k.a. neural networks) showed better results than logistic regression and random forest trained models.
