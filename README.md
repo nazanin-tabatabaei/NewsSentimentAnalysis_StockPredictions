@@ -37,19 +37,15 @@ All findings and figures should be quantifiable (-3 per non-quantifiable instanc
 Please make sure to add only relevant visualizations and insights. Inserting vague plots and figures, for example, unrelated word cloud or generic network visualization will incur penalty (-5 points penalty).
 
 ## Describe the Experimental Settings [10 Points]
-Explain the parameters of the experiment: what is the split used, cross-validation setting, evaluation metrics (for example, accuracy, AUC, or precision etc.), system settings (RAM, GPU, or CPU statistics).
--2 per missing relevant detail.
+ ### Evaluation metrics 
+In order to measure accuracy in the first baseline, we used a validation technique called the k-fold sequential cross validation (k-SCV). Since stock market data is of the form of time series, other methods such as ordinary k-fold crossvalidation are not applicable.
+In this method, we train on all days upto a specific day and test for the next days. For the purpose of our analysis, we use k = 5. More specifically, we trained our model on data from January first to October 31st of every year and tested it for the remaining of the same year. Technique from-> http://cs229.stanford.edu/proj2011/GoelMittal-StockMarketPredictionUsingTwitterSentimentAnalysis.pdf  
 
-In order to measure accuracy, we developed a novel validation technique called the k-fold sequential cross validation
-(k-SCV). In this method, we train on all days upto a specific day and test for the next k days. The direct k-fold
-cross validation method is not applicable in this context as
-the stock data is actually a time series unlike other scenarios
-where the data is available as a set. Therefore, it is meaningless to analyze past stock data after training on future
-values. For the purpose of our analysis, we use k = 5.
+accuracy,AUC
 
-Logistic Regression perform badly on
-this dataset, giving the same percentage values for Direction
-Accuracy for all mood combinations. This shows that classification (directly predicting trends) is not the ideal methodology for this problem.
+ ### System settings:
+Comodity computer with RAM:16GB, GPU:Intel UHD Graphics 630, CPU:Intel Core i7-8750H CPU @ 2.20GHz
+
 ## Baseline results and discussions [30 points]
 The report should have results from at least 2 baselines. At least one baseline should be from a published paper or preprint. Creating one reasonable baseline yourself (e.g., using feature engineering and standard ML classifier) is allowed. No additional points will be awarded for having more than 2 baselines.
 Baseline description [7.5*2 = 15]
@@ -70,6 +66,10 @@ values when trained on the feature set consisting of the DJIA
 values, Calm mood values and Happiness dimension over the
 past 3 days. The performance measure we have used is kfold sequential cross validation, which is more indicative of
 the market movements for financial data
+
+Logistic Regression perform badly on
+this dataset, giving the same percentage values for Direction
+Accuracy for all mood combinations. This shows that classification (directly predicting trends) is not the ideal methodology for this problem.
 ## Next steps [5 Points]
 Explain in detail your own proposed approach and what novelty or improvement you are adding over the baselines. [2.5 + 2.5 = 5 Points]
 -2 for unclear explanation
@@ -82,4 +82,5 @@ Raw Data Statistic:
 Data Analysis:  
 First Baseline Implemetation and discussion: Nazanin  
 Second Baseline:  
-Next Steps:  
+Next Steps:Nazanin,  
+Writing the Midterm Report: All  
