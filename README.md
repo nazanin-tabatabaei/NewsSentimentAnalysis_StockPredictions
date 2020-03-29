@@ -87,7 +87,7 @@ As an exploration to this baseline, we updated the VADER lexicon with words+sent
     VADER sentiment analyzer &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VADER sentiment analyzer with modified Lexicon  
     
     
-  Logistic Regression perform badly on this dataset. This shows that classification (directly predicting trends) is probabaly not the ideal methodology for this problem. Our tests also determined that using the MLP classifier (a.k.a. neural networks) showed better results than logistic regression and random forest trained models.
+  In general 12-SCV worked better than the lower folds. The modified lexicon only performed better in some cases, the original VADER lexicon worked better in the rest. From all our models with various number of k fold sequential croos validations, the Logistic Regression with 12-SCV trained on modified lexicon worked the best. In general, this baseline seems to perform poorly. The negative R2 value is an indicator of this low performance.
  
  ### Second BaseLine
   #### Baseline description [7.5*2 = 15]
