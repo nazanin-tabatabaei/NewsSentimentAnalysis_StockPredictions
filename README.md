@@ -3,30 +3,8 @@ TextMining,NLP,SentimentAnalysis
 
 
 ## Abstract
-In the finance field, stock market and its trends are extremely volatile in nature. It attracts
-researchers to capture the volatility and predicting its next moves. 
-This project is about taking non quantifiable data
-such as financial news articles about a company and predicting its future stock trend with news sentiment
-classification. Assuming that news articles have impact on stock market, this is an attempt to study
-relationship between news and stock trend.
-Result of phase 1 is news
-articles with its polarity score. This result is given as an input to the phase 2. In phase 2, text is
-converted in tf-idf vector space so that it can be given to the classifier. Then three different
-classifiers are programmed for the same data to compare results
-
-For integrity throughout the project, we considered
-Adjusted Close price as everyday stock price
-
-Stock market forecasting is very important in the
-planning of business activities.
- In this paper, we retrieved, extracted, and
-analyzed the effects of news sentiments on the stock market. 
-
-with their corresponding sentiment scores. These scores will
-then be analyzed and cross-validated against the stock prices
-to understand their effect.
-
-Identification of trends in the stock prices of a company by performing fundamental analysis of the company. News articles were provided as training data-sets to the model which classified the articles as positive or neutral. Sentiment score was computed by calculating the difference between positive and negative words present in the news article. Comparisons were made between the actual stock prices and the sentiment scores. Naive Bayes, OneR and Random Forest algorithms were used to observe the results of the model using Weka
+In the finance field, Stock market forecasting is very important in the planning of business activities. Stock market attracts researchers to capture the volatility and predicting its next moves. There are many techniques to predict the stock price variations, but this project is about taking non quantifiable data such as New York Times’ news articles headlines and predicting future stock changes depending on the news sentiment. Assuming that news articles have impact on stock market, this is an attempt to study relationship between news and stock trend.
+We are using NY Times Archive API to gather the news website articles data over the span of 20 years. Sentiment analysis of the news headlines is then used for training various MachineLearning models to understand their effect and predict the price of DJIA stock indices, collected from Yahoo finance website. For integrity throughout the project, we considered Adjusted Close price as everyday stock price.
 
 ## Dataset description [35 Points]
  ### Data preparation: [10 Points]
