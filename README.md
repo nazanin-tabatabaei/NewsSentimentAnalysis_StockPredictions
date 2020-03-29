@@ -47,16 +47,15 @@ accuracy,AUC
 Comodity computer with RAM:16GB, GPU:Intel UHD Graphics 630, CPU:Intel Core i7-8750H CPU @ 2.20GHz
 
 ## Baseline results and discussions [30 points]
-The report should have results from at least 2 baselines. At least one baseline should be from a published paper or preprint. Creating one reasonable baseline yourself (e.g., using feature engineering and standard ML classifier) is allowed. No additional points will be awarded for having more than 2 baselines.
-Baseline description [7.5*2 = 15]
-Describe the baseline. Give a short technical description of the baseline, along with its reference, provide details of the kernel or hyper-parameters used, provide links to code repository used [5 points]
--2 per missing detail, reference, link
-Why is this baseline suitable for the problem? [2.5 Points]
-Baseline result [10 points]
+ ### First BaseLine
+  #### Baseline description [7.5*2 = 15]
+  This baseline is taken from an article published by Dinesh D at this link-> https://software.intel.com/en-us/blogs/2017/07/14/stock-predictions-through-news-sentiment-analysis  
+The code repository for this baseline is here-> https://github.com/dineshdaultani/StockPredictions  
+In this baseline, we have used Vader Sentiment Analyzer, which comes with NLTK package. VADER is trained using social media and news data using a lexicon-based approach. It is used to score single merged strings for articles and gives a positive, negative and neutral score for that string through Natural Language Processing.  Hence, Vader is a suitable package for sentiment analysis of our merged news headlines.
+Output of sentiment analysis is then fed to machine learning models from scikit-learn library to predict the stock prices of DJIA indices. The machine learning models used in this baseline are Random Forest, Logistic Regression and Multi-Layer Perceptron (MLP) Classifiers.
+  #### Baseline result [10 points]
 Results of the baseline on your dataset, presented in a table or figure (e.g., a bar chart) [5*2 = 10]
 The baselines should be compared on the same metric [-5 if not]
-Result discussion [5 points]
-Compare the results of both the baselines. Why does one perform better than the other? If applicable, compare the result to the state-of-the-art reported in literature.
 We have investigated the causative relation between public
 mood as measured from a large scale collection of tweets
 from twitter.com and the DJIA values. 
@@ -70,6 +69,19 @@ the market movements for financial data
 Logistic Regression perform badly on
 this dataset, giving the same percentage values for Direction
 Accuracy for all mood combinations. This shows that classification (directly predicting trends) is not the ideal methodology for this problem.
+ 
+ ### Second BaseLine
+  #### Baseline description [7.5*2 = 15]
+Describe the baseline. Give a short technical description of the baseline, along with its reference, provide details of the kernel or hyper-parameters used, provide links to code repository used [5 points]
+-2 per missing detail, reference, link
+Why is this baseline suitable for the problem? [2.5 Points]
+  #### Baseline result [10 points]
+Results of the baseline on your dataset, presented in a table or figure (e.g., a bar chart) [5*2 = 10]
+The baselines should be compared on the same metric [-5 if not]
+
+ ### Result discussion [5 points]
+Compare the results of both the baselines. Why does one perform better than the other? If applicable, compare the result to the state-of-the-art reported in literature.
+
 ## Next steps [5 Points]
 Explain in detail your own proposed approach and what novelty or improvement you are adding over the baselines. [2.5 + 2.5 = 5 Points]
 -2 for unclear explanation
