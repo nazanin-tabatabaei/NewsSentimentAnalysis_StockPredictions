@@ -59,12 +59,17 @@ As the prices of the stocks fluctuate a lot, we have used a technique called smo
 As an exploration to this baseline, we updated the VADER lexicon with words+sentiments from other sources/lexicons such as the Loughran-McDonald Financial Sentiment Word Lists, and ran the various models mentioned above on the new lexicon and compared the results.  
 
   #### Baseline result [10 points]
-  Below are the results after applying various classifiers, The ones on the left are for basic VADER sentiment analyzer, and the ones on the right are for the analyzer with modified lexicon.  
-  <img src="https://www.dropbox.com/s/a8exwr39kx8n6gy/P1Logistic.PNG?raw=1">
+  Below are the results after applying various classifiers:
+   ##### Logistic Regression:  
+  <img src="https://www.dropbox.com/s/a8exwr39kx8n6gy/P1Logistic.PNG?raw=1">  
+  ###### VADER sentiment analyzer
   <img src="https://www.dropbox.com/s/3q66x5gqqyyl9g6/P2Logistic2.PNG?raw=1">  
-  
-  <img src="https://www.dropbox.com/s/qwz5efdzus86coc/P1random.PNG?raw=1">
+  ###### VADER sentiment analyzer with modified Lexicon
+   ##### Random Forest Regressor:
+  <img src="https://www.dropbox.com/s/qwz5efdzus86coc/P1random.PNG?raw=1">  
+  ###### VADER sentiment analyzer
   <img src="https://www.dropbox.com/s/grszklmvngj69ak/P2random.PNG?raw=1">  
+  ###### VADER sentiment analyzer with modified Lexicon
   Logistic Regression perform badly on this dataset. This shows that classification (directly predicting trends) is probabaly not the ideal methodology for this problem. Our tests also determined that using the MLP classifier (a.k.a. neural networks) showed better results than logistic regression and random forest trained models.
  
  ### Second BaseLine
