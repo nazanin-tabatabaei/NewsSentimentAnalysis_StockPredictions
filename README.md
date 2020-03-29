@@ -4,12 +4,15 @@ TextMining,NLP,SentimentAnalysis
 
 ## Abstract
 In the finance field, Stock market forecasting is very important in the planning of business activities. Stock market attracts researchers to capture the volatility and predicting its next moves. There are many techniques to predict the stock price variations, but this project is about taking non quantifiable data such as New York Times’ news articles headlines and predicting future stock changes depending on the news sentiment. Assuming that news articles have impact on stock market, this is an attempt to study relationship between news and stock trend.
-We are using NY Times Archive API to gather the news website articles data over the span of 20 years. Sentiment analysis of the news headlines is then used for training various MachineLearning models to understand their effect and predict the price of DJIA stock indices, collected from Yahoo finance website. For integrity throughout the project, we considered Adjusted Close price as everyday stock price.
+We are using NY Times Archive API to gather the news website articles data over the span of 20 years. Sentiment analysis of the news headlines is then used for training various MachineLearning models to understand their effect and predict the price of DJIA stock indices, collected from Yahoo finance website. We have used DJIA stock indices to predict the overall change in US top companies' stock market, instead of predicting individual company’s stock prices. For integrity throughout the project, we considered Adjusted Close price as everyday stock price.
 
-## Dataset description [35 Points]
- ### Data preparation: [10 Points]
-  #### Source [2 points]
-Describe how you got the dataset (e.g., crawling, API, from a website, etc.), give proper references wherever applicable (-2 for missing references of papers, websites, or APIs)
+## Dataset description  
+ ### Data preparation:  
+  #### Source  
+   ##### News Data:
+   The news data was gathered through NY Times Archive API. https://developer.nytimes.com/archive_api.json
+   ##### Stock indices:
+   We used DJIA stock indices, collected from Yahoo finance website. https://finance.yahoo.com/quote/%5EDJI/history
   #### Data preprocessing steps and explanations [4 + 4 Points]
 Explain how the data preprocessing, cleaning, imputation, and other processing was done.
 Explain why this dataset is necessary and sufficient to achieve the goals of the project.
