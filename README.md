@@ -103,8 +103,10 @@ Compare the results of both the baselines. Why does one perform better than the 
 
 ## Next steps [5 Points]
 For the first baseline, We will be experimenting with Convolutional Neural Network (CNN) and recurrent neural networks models. Some researchers in this field have also stated that Self Organizing Fuzzy Neural Network performs very good in predicting the DJIA values, which could be a next step for this baseline.  
-VADER sentiment Analyzer was used for the first baseline, which is built for social media text. As an exploratory addition to the first baseline, we updated the VADER lexicon with words+sentiments from other sources/lexicons such as the Loughran-McDonald Financial Sentiment Word Lists. A next step could be developing a sentiment analyzer which could work better in news article situations.  
+VADER sentiment Analyzer was used for the first baseline, which is built for social media text. As an exploratory addition to the first baseline, we updated the VADER lexicon with words+sentiments from other sources/lexicons such as the Loughran-McDonald Financial Sentiment Word Lists. A next step could be developing a sentiment analyzer which could work better in news article situations. For example, if we are using NYT’s headlines, train a lexicon-based analyser that is only based on NYT’s headlines. But we should be aware that our analyser is overfitted to NYTa’s data and will not work well if applied to something different.
 In our project we only considered news article sentiment analysis for prediction but in the real scenarios, stock fluctuations show trends which get repeated over a period of time. So there’s a lot of scope in merging the stock trends with the sentiment analysis to predict the stocks which could probably give better results.  
+We could also make a goal to check if the sentiment score predicts future stocks returns. A one-day lagged sentiment score allows us to compare today’s article headlines to tomorrow’s stock returns. This is an important point as we need our score index to predict the future, not to tell us what is happening in the present. 
+Another experiment can be using delta of the sentiment score instead of raw score.
 ## Contribution
 Abstract:Nazanin
 Data collection: Nazanin  
@@ -116,3 +118,25 @@ First Baseline Implemetation, discussion and next steps: Nazanin
 Second Baseline:  
 Writing the Midterm Report: All  
 Transfering to ACM format:  
+
+
+For later use:  
+https://www.kaggle.com/shreyams/stock-price-prediction-94-xgboost  
+https://www.kaggle.com/freakyoiseau/an-attempt-at-modeling-market-prices-with-nlp  
+https://www.kaggle.com/hiteshp/money-money-share-market-study  
+https://www.kaggle.com/glsahcann/data-science-for-beginner  
+https://arxiv.org/ftp/arxiv/papers/1607/1607.01958.pdf  
+https://brand24.com/blog/sentiment-analysis-stock-market/  
+https://arxiv.org/ftp/arxiv/papers/1812/1812.04199.pdf  
+https://towardsdatascience.com/stock-prediction-using-twitter-e432b35e14bd  
+https://arxiv.org/pdf/1010.3003.pdf  
+http://cs229.stanford.edu/proj2011/GoelMittal-StockMarketPredictionUsingTwitterSentimentAnalysis.pdf  
+https://github.com/gandalf1819/Stock-Market-Sentiment-Analysis  
+https://www.kaggle.com/ryanchan911/stock-headline-sentiment-analysis  
+https://www.kaggle.com/artgor/eda-feature-engineering-and-everything  
+https://github.com/jasonyip184/StockSentimentTrading  
+https://towardsdatascience.com/https-towardsdatascience-com-algorithmic-trading-using-sentiment-analysis-on-news-articles-83db77966704  
+https://algotrading101.com/learn/sentiment-analysis-with-python-finance/  
+https://www.dlology.com/blog/simple-stock-sentiment-analysis-with-news-data-in-keras/  
+https://www.quora.com/How-do-I-perform-sentiment-analysis-on-stock-market-news  
+https://github.com/Lucas170/Sentiment-Analysis-1-TSLA-Headlines/blob/master/Sentiment%20Analysis%20-%20Predicting%20Tesla%20Stock%20Price%20with%20Article%20Headlines.ipynb  
