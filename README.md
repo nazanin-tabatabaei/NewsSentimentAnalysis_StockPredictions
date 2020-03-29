@@ -3,8 +3,8 @@ TextMining,NLP,SentimentAnalysis
 
 
 ## Abstract
-In the finance field, Stock market forecasting is very important in the planning of business activities. Stock market attracts researchers to capture the volatility and predicting its next moves. There are many techniques to predict the stock price variations, but this project is about taking non quantifiable data such as New York Times’ news articles headlines and predicting future stock changes depending on the news sentiment. Assuming that news articles have impact on stock market, this is an attempt to study relationship between news and stock trend.
-We are using NY Times Archive API to gather the news website articles data over the span of 20 years. Sentiment analysis of the news headlines is then used for training various MachineLearning models to understand their effect and predict the price of DJIA stock indices, collected from Yahoo finance website. We have used DJIA stock indices to predict the overall change in US top companies' stock market, instead of predicting individual company’s stock prices. For integrity throughout the project, we considered Adjusted Close price as everyday stock price.
+In the finance field, Stock market forecasting is very important in the planning of business activities. Stock market attracts researchers to capture the volatility and predicting its next moves. There are many techniques to predict the stock price variations, but this project is focused on using non-quantifiable data such as New York Times’ news articles headlines and predicting future stock changes depending on the news sentiment, assuming that news articles have impact on stock market.
+We are using NY Times Archive API to gather the news website articles data over the span of 20 years. Sentiment analysis of the news headlines is then used for training various MachineLearning models to understand their effect and predict the price of Dow Jones Industrial Average (DJIA) stock indices, collected from Yahoo finance website. We have used DJIA stock indices to predict the overall change in US top companies' stock market, instead of predicting individual company’s stock prices. For integrity throughout the project, we considered Adjusted Close price as everyday stock price.
 
 ## Dataset description  
  ### Data preparation:  
@@ -13,11 +13,12 @@ We are using NY Times Archive API to gather the news website articles data over 
    The news data was gathered through NY Times Archive API. https://developer.nytimes.com/archive_api.json
    ##### Stock indices:
    We used DJIA stock indices, collected from Yahoo finance website. https://finance.yahoo.com/quote/%5EDJI/history
-  #### Data preprocessing steps and explanations [4 + 4 Points]
-Explain how the data preprocessing, cleaning, imputation, and other processing was done.
-Explain why this dataset is necessary and sufficient to achieve the goals of the project.
-  #### Please note: the dataset should be fixed and finalized [-10 if not]
-Exception: if you are crawling the dataset yourself, then you can continue to crawl the data beyond the midterm, as long as a big fraction of the dataset has been collected already.
+  #### Data preprocessing steps and explanations
+  The credit of data preparation techniques used in this project goes to this article published by Dinesh D: https://software.intel.com/en-us/blogs/2017/07/14/stock-predictions-through-news-sentiment-analysis
+   ##### Article Filtering:
+   We collected news articles from NY Times Archive API over the span of 20 years, from January 1st of 2000 to December 31st of 2019. Afterwards, we removed categories of articles, which were irrelelevant to stock market. Article sections that are kept at the end for sentiment analysis are as follows: 'Business', 'National', 'World', 'U.S.' , 'Politics', 'Opinion', 'Tech', 'Science',  'Health' and 'Foreign'. Out of 66M articles, approximately 719k articles are filtered out after applying the above filters.
+   ##### Merge stock indices with articles:
+   We concatenated all the articles headlines for a single day and merged them with appropriate date and Adjusted Close price of Dow Jones Industrial Average (DJIA) stock index value. Composite index prices such as DJIA reflect the overall change in the stock market. In general, the machine will get the output for one individual stock wrong most of the time, but when combined with other stocks, the variance in each stock insight will balance out. Therefore, the machine has a higher probability of getting the output right on average when we draw insights for a combination of stocks. Hence, most researchers prefer to predict stock prices of composite index instead of predicting individual company’s stock prices. 
  ### Raw Data Statistics: Explain the dataset [10 points]
 Describe the important properties of the dataset. How many data points are present? Describe the important features of the data and their basic statistics (range, mean, median, max). Details of ground-truth labels or dataset should be given, if applicable. Some examples are below:
 Text data: vocabulary size, number of sentences per text entry, average number of tokens per sentences, and more.
