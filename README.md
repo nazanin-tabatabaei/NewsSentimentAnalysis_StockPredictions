@@ -63,14 +63,12 @@ As an exploration to this baseline, we updated the VADER lexicon with words+sent
   
   
    ##### Logistic Regression:  
-  <img src="https://www.dropbox.com/s/rzx47373a5xbp1e/Q1Logistic.PNG?raw=1">
-  <img src="https://www.dropbox.com/s/09a7kfye9khj3t8/Q2Logistic.PNG?raw=1">  
+  <img src="https://www.dropbox.com/s/rzx47373a5xbp1e/Q1Logistic.PNG?raw=1"> <img src="https://www.dropbox.com/s/09a7kfye9khj3t8/Q2Logistic.PNG?raw=1">  
     VADER sentiment analyzer             VADER sentiment analyzer with modified Lexicon  
     
     
    ##### Random Forest Regressor:  
-  <img src="https://www.dropbox.com/s/if6tg81riem55z1/Q1forest.PNG?raw=1">
-  <img src="https://www.dropbox.com/s/oxhovy5dy9tjrj1/Q2forest.PNG?raw=1">  
+  <img src="https://www.dropbox.com/s/if6tg81riem55z1/Q1forest.PNG?raw=1"> <img src="https://www.dropbox.com/s/oxhovy5dy9tjrj1/Q2forest.PNG?raw=1">  
     VADER sentiment analyzer             VADER sentiment analyzer with modified Lexicon  
     
     
