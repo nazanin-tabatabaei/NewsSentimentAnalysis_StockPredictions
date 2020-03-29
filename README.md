@@ -68,7 +68,7 @@ As an exploration to this baseline, we updated the VADER lexicon with words+sent
     
     
    ##### Random Forest Regressor:  
-  <img src="https://www.dropbox.com/s/if6tg81riem55z1/Q1forest.PNG?raw=1"> <img src="https://www.dropbox.com/s/oxhovy5dy9tjrj1/Q2forest.PNG?raw=1">  
+  <img src="https://www.dropbox.com/s/ioboomr99kfeoef/Q1forestp.PNG?raw=1"> <img src="https://www.dropbox.com/s/oxhovy5dy9tjrj1/Q2forest.PNG?raw=1">  
     VADER sentiment analyzer &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VADER sentiment analyzer with modified Lexicon 
     
     
