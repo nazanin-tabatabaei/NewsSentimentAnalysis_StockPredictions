@@ -108,7 +108,7 @@ In our project we only considered news article sentiment analysis for prediction
 We could also make a goal to check if the sentiment score predicts future stocks returns. A one-day lagged sentiment score allows us to compare today’s article headlines to tomorrow’s stock returns. This is an important point as we need our score index to predict the future, not to tell us what is happening in the present. 
 Another experiment can be using delta of the sentiment score instead of raw score.
 ## Contribution
-Abstract:Nazanin
+Abstract:Nazanin  
 Data collection: Nazanin  
 Data Preparation: Nazanin  
 Raw Data Statistic:  
@@ -116,6 +116,7 @@ Data Analysis:
 Evaluation methods: Nazanin  
 First Baseline Implemetation, discussion and next steps: Nazanin  
 Second Baseline:  
+Next Steps: Nazanin,  
 Writing the Midterm Report: All  
 Transfering to ACM format:  
 
