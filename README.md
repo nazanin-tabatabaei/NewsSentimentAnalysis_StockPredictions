@@ -18,7 +18,8 @@ We are using NY Times Archive API to gather the news website articles data over 
    ##### Article Filtering:
    We collected news articles from NY Times Archive API over the span of 20 years, from January 1st of 2000 to December 31st of 2019. Afterwards, we removed categories of articles, which were irrelelevant to stock market. Article sections that are kept at the end for sentiment analysis are as follows: 'Business', 'National', 'World', 'U.S.' , 'Politics', 'Opinion', 'Tech', 'Science',  'Health' and 'Foreign'. Out of 66M articles, approximately 719k articles are filtered out after applying the above filters.
    ##### Merge stock indices with articles:
-   We concatenated all the articles headlines for a single day and merged them with appropriate date and Adjusted Close price of Dow Jones Industrial Average (DJIA) stock index value. Composite index prices such as DJIA reflect the overall change in the stock market. In general, the machine will get the output for one individual stock wrong most of the time, but when combined with other stocks, the variance in each stock insight will balance out. Therefore, the machine has a higher probability of getting the output right on average when we draw insights for a combination of stocks. Hence, most researchers prefer to predict stock prices of composite index instead of predicting individual company’s stock prices. 
+   We concatenated all the articles headlines for a single day and merged them with appropriate date and Adjusted Close price of Dow Jones Industrial Average (DJIA) stock index value. Composite index prices such as DJIA reflect the overall change in the stock market. In general, the machine will get the output for one individual stock wrong most of the time, but when combined with other stocks, the variance in each stock insight will balance out. Therefore, the machine has a higher probability of getting the output right on average when we draw insights for a combination of stocks. Hence, most researchers prefer to predict stock prices of composite index instead of predicting individual company’s stock prices.  
+   As the stock market is closed on weekends and US holidays, there are no open/close prices for any of the stocks on those days. We have used the interpolation method from pandas package to interpolate the prices and fill in the missing values.
  ### Raw Data Statistics: Explain the dataset [10 points]
 Describe the important properties of the dataset. How many data points are present? Describe the important features of the data and their basic statistics (range, mean, median, max). Details of ground-truth labels or dataset should be given, if applicable. Some examples are below:
 Text data: vocabulary size, number of sentences per text entry, average number of tokens per sentences, and more.
@@ -38,7 +39,7 @@ Please make sure to add only relevant visualizations and insights. Inserting vag
 
 ## Describe the Experimental Settings [10 Points]
  ### Evaluation metrics 
-In order to measure accuracy in the first baseline, we used a validation technique called the k-fold sequential cross validation (k-SCV). Since stock market data is of the form of time series, other methods such as ordinary k-fold crossvalidation are not applicable.
+In order to measure performance in the first baseline, we used a validation technique called the k-fold sequential cross validation (k-SCV). Since stock market data is of the form of time series, other methods such as ordinary k-fold crossvalidation are not applicable.
 In this method, we train on all days upto a specific day and test for the next days. For the purpose of our analysis, we use k = 5. More specifically, we trained our model on data from January first to October 31st of every year and tested it for the remaining of the same year. Technique from-> http://cs229.stanford.edu/proj2011/GoelMittal-StockMarketPredictionUsingTwitterSentimentAnalysis.pdf  
 
 accuracy,AUC
@@ -48,27 +49,16 @@ Comodity computer with RAM:16GB, GPU:Intel UHD Graphics 630, CPU:Intel Core i7-8
 
 ## Baseline results and discussions [30 points]
  ### First BaseLine
-  #### Baseline description [7.5*2 = 15]
+  #### Baseline description
   This baseline is taken from an article published by Dinesh D at this link-> https://software.intel.com/en-us/blogs/2017/07/14/stock-predictions-through-news-sentiment-analysis  
 The code repository for this baseline is here-> https://github.com/dineshdaultani/StockPredictions  
-In this baseline, we have used Vader Sentiment Analyzer, which comes with NLTK package. VADER is trained using social media and news data using a lexicon-based approach. It is used to score single merged strings for articles and gives a positive, negative and neutral score for that string through Natural Language Processing.  Hence, Vader is a suitable package for sentiment analysis of our merged news headlines.
-Output of sentiment analysis is then fed to machine learning models from scikit-learn library to predict the stock prices of DJIA indices. The machine learning models used in this baseline are Random Forest, Logistic Regression and Multi-Layer Perceptron (MLP) Classifiers.
-  #### Baseline result [10 points]
-Results of the baseline on your dataset, presented in a table or figure (e.g., a bar chart) [5*2 = 10]
-The baselines should be compared on the same metric [-5 if not]
-We have investigated the causative relation between public
-mood as measured from a large scale collection of tweets
-from twitter.com and the DJIA values. 
-Thirdly, a Self Organizing Fuzzy Neural
-Network performs very good in predicting the actual DJIA
-values when trained on the feature set consisting of the DJIA
-values, Calm mood values and Happiness dimension over the
-past 3 days. The performance measure we have used is kfold sequential cross validation, which is more indicative of
-the market movements for financial data
+In this baseline, we have used Vader Sentiment Analyzer, which comes with NLTK package. VADER is trained using social media and news data using a lexicon-based approach. It is used to score single merged strings for articles and gives a positive, negative and neutral score for that string through Natural Language Processing.  Hence, Vader is a suitable package for sentiment analysis of our merged news headlines.  
+Output of sentiment analysis is then fed to machine learning models from scikit-learn library to predict the stock prices of DJIA indices. The machine learning models used in this baseline are Random Forest, Logistic Regression and Multi-Layer Perceptron (MLP) Classifiers.  
+As the prices of the stocks fluctuate a lot, we have used a technique called smoothing which is used in financial markets to take a moving average of the values, which results in comparatively smooth curves. For moving average implementation, we have used the EWMA method from pandas package.  
+As an exploration to this baseline, we updated the VADER lexicon with words+sentiments from other sources/lexicons such as the Loughran-McDonald Financial Sentiment Word Lists, and ran the various models mentioned above on the new lexicon and compared the results.  
 
-Logistic Regression perform badly on
-this dataset, giving the same percentage values for Direction
-Accuracy for all mood combinations. This shows that classification (directly predicting trends) is not the ideal methodology for this problem.
+  #### Baseline result [10 points]
+  Logistic Regression perform badly on this dataset. This shows that classification (directly predicting trends) is probabaly not the ideal methodology for this problem. Our tests also determined that using the MLP classifier (a.k.a. neural networks) showed better results than logistic regression and random forest trained models.
  
  ### Second BaseLine
   #### Baseline description [7.5*2 = 15]
@@ -83,16 +73,14 @@ The baselines should be compared on the same metric [-5 if not]
 Compare the results of both the baselines. Why does one perform better than the other? If applicable, compare the result to the state-of-the-art reported in literature.
 
 ## Next steps [5 Points]
-Explain in detail your own proposed approach and what novelty or improvement you are adding over the baselines. [2.5 + 2.5 = 5 Points]
--2 for unclear explanation
-For development projects, clearly describe what will be done by the final report and how exactly this will be achieved. Example, if you are creating an app, where do you plan to host it.
-
+For the first baseline, We will be experimenting with Convolutional Neural Network (CNN) and recurrent neural networks models. Some researchers in this field have also stated that Self Organizing Fuzzy Neural Network performs very good in predicting the DJIA values, which could be a next step for this baseline.  
+VADER sentiment Analyzer was used for the first baseline, which is built for social media text. As an exploratory addition to the first baseline, we updated the VADER lexicon with words+sentiments from other sources/lexicons such as the Loughran-McDonald Financial Sentiment Word Lists. A next step could be developing a sentiment analyzer which could work better in news article situations.  
+In our project we only considered news article sentiment analysis for prediction but in the real scenarios, stock fluctuations show trends which get repeated over a period of time. So there’s a lot of scope in merging the stock trends with the sentiment analysis to predict the stocks which could probably give better results.  
 ## Contribution
 Data collection: Nazanin  
 Data Preparation: Nazanin  
 Raw Data Statistic:  
 Data Analysis:  
-First Baseline Implemetation and discussion: Nazanin  
+First Baseline Implemetation, discussion and next steps: Nazanin  
 Second Baseline:  
-Next Steps:Nazanin,  
 Writing the Midterm Report: All  
