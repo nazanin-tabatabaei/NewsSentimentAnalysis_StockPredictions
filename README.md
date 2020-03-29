@@ -89,10 +89,8 @@ As an exploration to this baseline, we updated the VADER lexicon with words+sent
     
   In general 12-SCV worked better than the lower folds. The modified lexicon only performed better in some cases, the original VADER lexicon worked better in the rest. From all our models with various number of k fold sequential croos validations, the Logistic Regression with 12-SCV trained on modified lexicon worked the best. In general, this baseline seems to perform poorly. The negative R2 value is an indicator of this low performance.
   This poor performance was also predictable, when looking at the correlation between the sentiment scores and stock prices. To be honest, no surprise here. Markets are getting more sophisticated and we ran an overly simplistic analysis.  
-  <img src="https://www.dropbox.com/s/wxfpnll069vybyq/score1.PNG?raw=1">  
-  <img src="https://www.dropbox.com/s/nj7jzzvvj671qzb/score2.PNG?raw=1">  
-  <img src="https://www.dropbox.com/s/nm25cknmgovam2s/score3.PNG?raw=1">  
-  <img src="https://www.dropbox.com/s/q1utx9j3d5iiq0f/score4.PNG?raw=1">  
+  <img src="https://www.dropbox.com/s/wxfpnll069vybyq/score1.PNG?raw=1"> <img src="https://www.dropbox.com/s/nj7jzzvvj671qzb/score2.PNG?raw=1">  
+  <img src="https://www.dropbox.com/s/nm25cknmgovam2s/score3.PNG?raw=1"> <img src="https://www.dropbox.com/s/q1utx9j3d5iiq0f/score4.PNG?raw=1">  
   
  
  ### Second BaseLine
