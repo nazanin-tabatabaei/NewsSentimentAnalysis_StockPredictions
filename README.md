@@ -3,10 +3,12 @@ TextMining,NLP,SentimentAnalysis
 
 
 ## Abstract
-In the finance field, Stock market forecasting is very important in the planning of business activities. With the failure of Efficient Market Hypothesis, a popular theory about stock prediction, Stock market has attracted researchers to capture the volatility and predicting its next moves(https://arxiv.org/ftp/arxiv/papers/1607/1607.01958.pdf). The two distinct trading
+In the finance field, Stock market forecasting is very important in the planning of business activities. Early research on stock market
+prediction was based on random walk theory and the Efficient Market Hypothesis(https://doi.org/10.1086/294743). With the failure of Efficient Market Hypothesis, a popular theory about stock prediction, stock market has attracted researchers to capture the volatility and predicting its next moves(https://arxiv.org/ftp/arxiv/papers/1607/1607.01958.pdf). The two distinct trading
 philosophies for stock market prediction are fundamental and technical analysis(https://www.semanticscholar.org/paper/Sentiment-analysis-on-social-media-for-stock-Nguyen-Shirai/ae6979ff80b2204a5cdf0510b8037bd472648040). This research follows the Fundamental analysis technique and is focused on using non-quantifiable data such as New York Times’ news articles headlines and predicting future stock changes depending on the news sentiment, assuming that news articles have impact on stock market.
 We are using NY Times Archive API to gather the news website articles data over the span of 20 years. Sentiment analysis of the news headlines is then used for training various MachineLearning models to understand their effect and predict the price of Dow Jones Industrial Average (DJIA) stock indices, collected from Yahoo finance website. We have used DJIA stock indices to predict the overall change in US top companies' stock market, instead of predicting individual company’s stock prices. For integrity throughout the project, we considered Adjusted Close price as everyday stock price.
 To analyze the sentiment of the news headlines, we used 2 techniques. In the first technique, we used VADER sentiment Analyzer from NLTK package, which is trained using social media and news data. In the second approach, we trained our own.....The evaluation results of these 2 techniques show that the ... method works better.
+
 ## Dataset description  
  ### Data preparation:  
   #### Source  
