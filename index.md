@@ -345,7 +345,7 @@ All team members have contributed a similar amount of effort.
 \bibliography{reference}
 
 
-\end{document}
+\end{document%}
 \endinput
 %%
 %% End of file `sample-sigconf.tex'.
